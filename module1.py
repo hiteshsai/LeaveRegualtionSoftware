@@ -3,7 +3,7 @@ import datetime
 
 
 def reader_writer():                            #Function to read the data from csv files
-    f_open=open('login.csv','rb')
+    f_open=open('CSV_Files/login.csv','rb')
     reader=csv.reader(f_open)
     global genderlist,dojlist
     id_list=[]
@@ -74,7 +74,7 @@ def first_update_record():                      #First time updating the record
                 final_list.append(total_list[k+4])
                 
                
-            f_open=open('login.csv','rb')
+            f_open=open('CSV_Files/login.csv','rb')
             reader=csv.reader(f_open)
             l=[]
             for row in reader:
@@ -85,14 +85,14 @@ def first_update_record():                      #First time updating the record
             for j in range(len(final_list)):
                     l[i+1].append(final_list[j])
             
-            f_open=open('login.csv','wb')
+            f_open=open('CSV_Files/login.csv','wb')
             writer=csv.writer(f_open)
             
             for i in range(len(l)):
                 writer.writerow(l[i])
             f_open.close()
             
-            f_open1=open('s_leaves.csv','ab')               #updating information of special leaves
+            f_open1=open('CSV_Files/s_leaves.csv','ab')               #updating information of special leaves
             writer=csv.writer(f_open1)
             writer.writerow(slist)
             f_open.close()

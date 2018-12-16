@@ -25,7 +25,7 @@ def update_spl_leaves(t_leave):                                             #Upd
     else:
         leaves[index+1][1]=int(leaves[index+1][1])-1
 
-    key=open('s_leaves.csv','wb')
+    key=open('CSV_Files/s_leaves.csv','wb')
     writer=csv.writer(key) 
     for i in range(len(leaves)):
         writer.writerow(leaves[i]) 
@@ -33,7 +33,7 @@ def update_spl_leaves(t_leave):                                             #Upd
 
 def leave_update(l_type,ref):                                               #Updating the main record(i.e.,login.csv)    global leaves
     leaves=[]
-    key=open('s_leaves.csv','rb')
+    key=open('CSV_Files/s_leaves.csv','rb')
     reader=csv.reader(key)
     for row in reader:
         leaves.append(row)
@@ -68,7 +68,7 @@ def leave_update(l_type,ref):                                               #Upd
         update_spl_leaves('cc')
         
     key.close()
-    f_open=open('login.csv','rb')
+    f_open=open('CSV_Files/login.csv','rb')
     reader=csv.reader(f_open)
     l=[]
     
@@ -103,7 +103,7 @@ def leave_update(l_type,ref):                                               #Upd
     for i in range(5,len(l[index+1])):
         l[index+1][i]=final_list[i-5]
     
-    f_open=open('login.csv','wb')
+    f_open=open('lCSV_Files/ogin.csv','wb')
     writer=csv.writer(f_open)
     for i in range(len(l)):
         writer.writerow(l[i])
@@ -128,9 +128,9 @@ def leave_page():                                           #final leave page
     
 
 def leave_record():                                     #Storing the leave data in our data base
-    key=open('leave_record.csv','rb')  
+    key=open('CSV_Files/leave_record.csv','rb')  
     reader=csv.reader(key)
-    f_open=open('leave_record.csv','ab')
+    f_open=open('CSV_Files/leave_record.csv','ab')
     writer=csv.writer(f_open)
     row=next(reader)
     sno=[]

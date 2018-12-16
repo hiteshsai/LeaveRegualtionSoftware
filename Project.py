@@ -55,7 +55,7 @@ def admin():                                #checking Administrator name and pas
     admin_name =raw_input('Enter Admin name:     ')
     admin_pass =raw_input('Enter Admin password: ')
     
-    f_open =open('admin.csv','rb')
+    f_open =open('CSV_Files/admin.csv','rb')
     reader= csv.reader(f_open)
     name=[]
     pas=[]
@@ -77,7 +77,7 @@ def add_mem():                          #Adding a new member after checking the 
     while True:
         val= admin()
         if val==True:
-            f_open =open('login.csv','ab')
+            f_open =open('CSV_Files/login.csv','ab')
             writer = csv.writer(f_open)
             print '\nHello sir!'
             ID = raw_input('Enter the ID                         : ')   
@@ -105,7 +105,7 @@ def add_mem():                          #Adding a new member after checking the 
                     if val==True:
                         DOJ=doj
                         total_list= recordnew(DOJ,gender)           #calling function for calculating the leaves
-                        f_open=open('login.csv','rb')
+                        f_open=open('CSV_Files/login.csv','rb')
                         reader=csv.reader(f_open)
                         row=next(reader)
                         sno=[]
@@ -119,7 +119,7 @@ def add_mem():                          #Adding a new member after checking the 
                             l.append(i)
                         writer.writerow(l)
                         f_open.close()
-                        key=open('s_leaves.csv','ab')
+                        key=open('CSV_Files/s_leaves.csv','ab')
                         writer=csv.writer(key)
                         if gender=='Male':
                             sleaves=[2]
@@ -179,7 +179,7 @@ def recordnew(doj,gender):                              #calculating leaves for 
     
 def record(index):                              #segregating the leaves into availed and balance leaves
     global avail_list,bal_list,total_list
-    f_open=open('login.csv','rb')
+    f_open=open('CSV_Files/login.csv','rb')
     reader=csv.reader(f_open)
     row=next(reader)
     l=[]
