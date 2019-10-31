@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
-sys.path.append("C:\Users\Manikumar\Anaconda2\Lib\site-packages\\matplotlib")
+sys.path.append("..\Anaconda2\Lib\site-packages\\matplotlib")
 
 def plot_bar(gen,avail_list,bal_list,name):             #plotting bar graph
 
